@@ -5,7 +5,8 @@
     "build": "vite build",
     "server:dev": "node ./server",
     "server:prod": "cross-env NODE_ENV=production node ./server",
-    "lint": "eslint . --max-warnings 0"
+    "lint": "eslint . --max-warnings 0",
+    "build:deploy": "vite build && echo \"\" > ./dist/client/.nojekyll gh-pages -d dist/client"
   },
   "dependencies": {
     "@vitejs/plugin-react": "^4.0.4",
@@ -20,8 +21,11 @@
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "sirv": "^2.0.3",
-    "vite": "^4.4.9",
-    "vike": "^0.4.144"
+    "vike": "^0.4.144",
+    "vite": "^4.4.9"
   },
-  "type": "module"
+  "type": "module",
+  "devDependencies": {
+    "gh-pages": "^6.0.0"
+  }
 }
